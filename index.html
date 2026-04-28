@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mottaki Billah | Full Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/profile.png" />
+
+    
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills-section">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home">
+      <img src="assets/profile.jpg" class="profile-img" />
+      <h1>Mottaki Billah</h1>
+      <div class="typing" id="typing"></div>
+      <a href="#projects" class="btn">View Projects</a>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+            I am a passionate Full Stack Developer specializing in .NET technologies. 
+    I have experience working with ASP.NET Core, Web API, and SQL Server for backend development, 
+    along with Angular and modern frontend tools for building responsive user interfaces.
+
+    I am continuously learning and building real-world projects to improve my skills 
+    and become a professional software developer.
+
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills-section">
+      <h2>Skills</h2>
+      <div id="skills">
+        <div class="skill">C#</div>
+        <div class="skill">ASP.NET Core</div>
+        <div class="skill">Web API</div>
+        <div class="skill">Angular</div>
+        <div class="skill">SQL Server</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Git</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      
+      <div class="card">
+        <h3>Nexora Suite - Smart CRM & Inventory Management System</h3>
+        <p>
+          This system enables organizations to efficiently manage their
+          customers, products, and operational workflows through a clean,
+          responsive, and interactive interface. It is built with scalability
+          and maintainability in mind, leveraging Entity Framework Core, SQL
+          Server Stored Procedures, and a modular architecture.
+        </p>
+        <div class="btn-group">
+          <a
+            class="btn"
+            href="https://nexorasuite20260424163432-hda6cahhbjbxhff9.canadacentral-01.azurewebsites.net/">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tour Management System</h3>
+        <p>
+          This system allows users to:
+          <ul style="margin-left: 30px;">
+            <li>Create and manage tour events</li>
+            <li>Add members
+          with image upload</li>
+            <li>Track payment status (Paid / Unpaid)</li>
+            <li>Manage event-based costs</li>
+            <li>View real-time financial summary (Collection, Cost, Balance)</li>
+          </ul>     
+        </p>
+        <div class="btn-group">
+          <a class="btn" href="https://tour.azurewebsites.net/">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Restaurant Management System</h3>
+        <p>
+          This system allows users to:
+          <ul style="margin-left: 30px;margin-bottom: 3px;"e>
+            <li>Manage categories and food items</li>
+            <li>Handle stock dynamically (size, price, quantity)</li>
+            <li>Upload and manage food images</li>
+            <li>Perform operations securely with role-based access</li>
+            
+          </ul>  
+             Built using <b>ASP.NET MVC + Entity Framework + SQL Server</b>, this system demonstrates real-world enterprise development practices.
+        </p>
+        <div class="btn-group">
+          <a class="btn" href="https://drive.google.com/file/d/1yEcVVfJM1vQSTDQF1CjMTIS1N3YNfTB8/view?usp=sharing" target="_blank">View Project 📄</a>
+        </div>
+      </div>
+      
+
+      <div>
+        <h4 style="color: #c52822;">Source code available upon request</h4>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      
+      <p>
+        Phone:
+        <a href="tel:+8801767786984"
+          >+88 01767786984</a>
+      </p>
+
+      <p>Email: <a href="mailto:mottakib0@gmail.com">mottakib0@gmail.com</a></p>
+      
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/mottaki-billah" target="_blank"
+          >mottaki-billah</a
+        >
+      </p>
+    </section>
+
+    <footer>© 2026 Mottaki Billah | Full Stack Developer</footer>
+
+    <!-- TYPING SCRIPT -->
+    <script>
+      const text = [
+        "Full Stack Developer (.NET)",
+        "ASP.NET Core & Web API",
+        "Angular Frontend Developer",
+        "SQL Server Database Engineer",
+      ];
+
+      let i = 0,
+        j = 0,
+        isDeleting = false;
+
+      function type() {
+        const current = text[i];
+        document.getElementById("typing").textContent = current.substring(0, j);
+
+        if (!isDeleting && j < current.length) j++;
+        else if (isDeleting && j > 0) j--;
+        else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) i = (i + 1) % text.length;
+        }
+
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+
+      type();
+    </script>
+  </body>
+</html>
